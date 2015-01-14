@@ -1,0 +1,2 @@
+# CoreNodeJStests
+Sample NodeJS tests
