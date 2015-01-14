@@ -6,6 +6,7 @@ var supertest = require('supertest')
 
 describe('Create a story', function(){
 	it('Make a POST call to create a story', function(done){
+// The story payload		
 		storyJson = JSON.stringify({
   "status": "Published",
   "headline": "NodeJS/Mocha automation test story",
@@ -62,7 +63,7 @@ describe('Create a story', function(){
 		body: storyJson,
 		headers: {'Content-Type': 'application/json'}
 }
-
+// making the post call to create the story
 request.post(postData, function(error, response, body){
 	var assetId = JSON.parse(body)
 	console.log(assetId.Result)
@@ -81,7 +82,8 @@ request.post(postData, function(error, response, body){
 		var getData = {
 			url: getUrl,
 			headers: {'Content-Type': 'application/json'}
-			
+// having some trouble here.  There is no data being returned since I have not figured out how to do a dealy of 12 seconds 
+// to wait for replication
 		}
 		request(getData, function(error, response, body){
 			console.log(body)
